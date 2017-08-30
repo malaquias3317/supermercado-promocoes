@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "474378644088",
+    "firebase_url": "https://supermercado-promocoes.firebaseio.com",
+    "project_id": "supermercado-promocoes",
+    "storage_bucket": "supermercado-promocoes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474378644088:android:a62c66fe41e1275f",
+        "android_client_info": {
+          "package_name": "br.com.cmdweb.supermercadopromocoes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474378644088-jvhp31tqbncp2sep7uplkr7ut1oct44o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.cmdweb.supermercadopromocoes",
+            "certificate_hash": "9a87124461696a62879f51877a0fe84fba2acdbe"
+          }
+        },
+        {
+          "client_id": "474378644088-fmhacatmtpgp6mrvglrv096dv72bjkfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN3TL4CEG3ORUbQ1Qd_qRSeTxB55F1USA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474378644088-fmhacatmtpgp6mrvglrv096dv72bjkfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
