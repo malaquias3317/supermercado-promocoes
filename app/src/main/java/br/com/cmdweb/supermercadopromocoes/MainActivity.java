@@ -17,6 +17,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("FIREBASE",FirebaseInstanceId.getInstance().getToken());
+
+        FirebaseMessaging.getInstance().subscribeToTopic("promocoes");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
