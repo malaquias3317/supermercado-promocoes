@@ -28,6 +28,10 @@ public class PromocaoJsonParser {
                 Promocao promocao = new Promocao();
 
                 promocao.setId(jsonObject.getInt("id"));
+                promocao.setDescricao(jsonObject.getString("descricao"));
+                promocao.setValidade("Validade: " + jsonObject.getString("validade"));
+                promocao.setPreco("por " + jsonObject.getString("preco"));
+                promocao.setPrecoAntigo("de " + jsonObject.getString("precoAntigo"));
 
                 try{
                     String imageUrl = jsonObject.getString("imagem");

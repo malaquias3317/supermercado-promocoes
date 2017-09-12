@@ -9,11 +9,11 @@ import android.graphics.Bitmap;
 public class Promocao {
 
     private int id;
-    private String nome;
     private String descricao;
     private String preco;
     private String validade;
     private Bitmap imagem;
+    private String precoAntigo;
 
     public int getId() {
         return id;
@@ -23,11 +23,43 @@ public class Promocao {
         this.id = id;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
+    public String getValidade() {
+        return validade;
+    }
+
+    public void setValidade(String validade) {
+        this.validade = validade;
+    }
+
     public Bitmap getImagem() {
         return imagem;
     }
 
     public void setImagem(Bitmap imagem) {
         this.imagem = imagem;
+    }
+
+    public String getPrecoAntigo() {
+        return precoAntigo;
+    }
+
+    public void setPrecoAntigo(String precoAntigo) {
+        this.precoAntigo = precoAntigo;
     }
 }

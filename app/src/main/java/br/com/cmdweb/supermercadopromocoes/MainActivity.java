@@ -2,7 +2,6 @@ package br.com.cmdweb.supermercadopromocoes;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -11,14 +10,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +25,31 @@ public class MainActivity extends AppCompatActivity {
 
     List<Promocao> promocaoList;
 
+    private static final String URL = "http://so.cmdweb.com.br/Request/Service/getPromocoes";
+
     private LruCache<Integer, Bitmap> imgCache;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.atualizar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.atualizaritens){
+            promocaoList = new ArrayList();
+            atualizarView();
+
+            if (isOnline())
+                buscarDados(URL);
+            else
+                Toast.makeText(this, "Rede não disponivel", Toast.LENGTH_LONG).show();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         imgCache = new LruCache<>(cacheSize);
 
         if (isOnline())
-            buscarDados("http://cmdweb.com.br/promocoes.json");
+            buscarDados(URL);
         else
             Toast.makeText(this, "Rede não disponivel", Toast.LENGTH_LONG).show();
 
@@ -64,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void atualizarView() {
 
-        ImageAdapter adapter = new ImageAdapter(this, R.layout.imagempromocao, promocaoList);
+        PromocaoAdapter adapter = new PromocaoAdapter(this, R.layout.imagempromocao, promocaoList);
         ListView listViewProduto = (ListView) findViewById(R.id.listView);
 
         listViewProduto.setAdapter(adapter);
@@ -79,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
+            Log.i("LOG", "Executando update");
             progressbar.setVisibility(View.VISIBLE);
         }
 
