@@ -56,10 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("FIREBASE",FirebaseInstanceId.getInstance().getToken());
-
-        FirebaseMessaging.getInstance().subscribeToTopic("promocoes");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -73,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         int cacheSize = maxMemory / 8;
 
         imgCache = new LruCache<>(cacheSize);
+
+        try {
+            FirebaseMessaging.getInstance().subscribeToTopic("promocoes");
+        }catch (Exception e){}
 
         if (isOnline())
             buscarDados(URL);
