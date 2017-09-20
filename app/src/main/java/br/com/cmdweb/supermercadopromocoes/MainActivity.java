@@ -122,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Promocao> s) {
-            atualizarView();
+            if(s != null)
+                atualizarView();
             progressbar.setVisibility(View.INVISIBLE);
         }
 

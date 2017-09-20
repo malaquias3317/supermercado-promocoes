@@ -31,7 +31,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             this.enviarNotificacao(remoteMessage.getNotification().getBody(), remoteMessage.getData());
         }
 
-        if(remoteMessage.getData().size() > 0){
+        if(remoteMessage.getData() != null && remoteMessage.getData().size() > 0){
             Log.d("TAG-FCM", "Dados: " + remoteMessage.getData());
         }
 

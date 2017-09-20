@@ -46,6 +46,10 @@ public class PromocaoJsonParser {
                 list.add(promocao);
             }
 
+            if(list.size() == 0){
+                list.add(new Promocao());
+            }
+
             return list;
 
         }catch (JSONException e){
