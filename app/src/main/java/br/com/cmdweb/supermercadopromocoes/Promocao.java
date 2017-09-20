@@ -56,7 +56,7 @@ public class Promocao {
     }
 
     public String getPrecoAntigo() {
-        return precoAntigo;
+        return precoAntigo == "0,00" ? "" : precoAntigo;
     }
 
     public void setPrecoAntigo(String precoAntigo) {
