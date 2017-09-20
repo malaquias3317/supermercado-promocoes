@@ -6,4 +6,9 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     android:id="@+id/atualizaritens"
     app:showAsAction="always"
     />
+    <item android:title="Info"
+        android:icon="@drawable/info"
+        android:id="@+id/info"
+        app:showAsAction="always"
+        />
 </menu>

@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             else
                 Toast.makeText(this, "Rede não disponivel", Toast.LENGTH_LONG).show();
 
+        }else if(item.getItemId() == R.id.info){
+            //botao de informação ::TODO
         }
         return super.onOptionsItemSelected(item);
     }

@@ -32,7 +32,7 @@ public class PromocaoJsonParser {
                 promocao.setValidade("Validade: " + jsonObject.getString("validade"));
                 promocao.setPreco("por " + jsonObject.getString("preco"));
                 promocao.setPrecoAntigo("de " + jsonObject.getString("precoAntigo"));
-
+                
                 try{
                     String imageUrl = jsonObject.getString("imagem");
                     InputStream inputStream = (InputStream) new URL(imageUrl).getContent();
