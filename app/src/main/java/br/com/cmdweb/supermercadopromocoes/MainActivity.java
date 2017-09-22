@@ -1,6 +1,7 @@
 package br.com.cmdweb.supermercadopromocoes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -50,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Rede não disponivel", Toast.LENGTH_LONG).show();
 
         }else if(item.getItemId() == R.id.info){
-            //botao de informação ::TODO
+            Intent intent = new Intent(MainActivity.this,
+                    Info.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
